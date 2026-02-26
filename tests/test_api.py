@@ -18,7 +18,9 @@ class TestRootEndpoint:
         response = client.get("/")
         assert response.status_code == 200
         assert "text/html" in response.headers["content-type"]
-        assert "DOCX to HTML Converter API" in response.text
+        # root endpoint now serves the SPA, verify SPA content is present
+        assert "<h1>DOCX → HTML</h1>" in response.text
+        assert "id=\"drop-zone\"" in response.text
 
 
 class TestConvertEndpoint:
