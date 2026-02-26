@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOCX to HTML Converter</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>DOCX → HTML</h1>
+        <div id="theme-toggle" class="theme-toggle">🌙</div>
+        <div id="drop-zone" class="drop-zone">
+            <p>Drag &amp; drop a <strong>.docx</strong> file here, or click to select</p>
+            <input type="file" id="file-input" accept=".docx" hidden>
+        </div>
+        <button id="convert-btn" class="primary" disabled>Convert</button>
+        <a id="download-link" class="download-link" style="display: none;">Download HTML</a>
+        <div id="message" class="message"></div>
+    </div>
+
+    <script src="/static/app.js"></script>
+    <script>
+        // warn if the page is opened directly from the filesystem
+        if (window.location.protocol === 'file:') {
+            const warning = document.createElement('div');
+            warning.style.position = 'fixed';
+            warning.style.top = '0';
+            warning.style.left = '0';
+            warning.style.right = '0';
+            warning.style.padding = '1rem';
+            warning.style.background = '#ffcc00';
+            warning.style.color = '#000';
+            warning.style.textAlign = 'center';
+            warning.textContent = '⚠️ This page must be served by the API server. Start the backend (e.g. `python api.py`) and open http://localhost:8094/ in your browser.';
+            document.body.appendChild(warning);
+        }
+    </script>
+</body>
+</html>
