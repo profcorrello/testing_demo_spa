@@ -27,7 +27,9 @@ jobs:
 
       # Run Python tests
       - name: Run Python tests with pytest
-        run: pytest -v
+        run: |
+          export PYTHONPATH="${PYTHONPATH}:${{ github.workspace }}"
+          pytest -v
 
       # Set up Node.js for Playwright UI tests
       - name: Set up Node.js

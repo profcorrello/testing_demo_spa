@@ -11,4 +11,5 @@ wheels/
 
 # Node/Playwright artifacts
 node_modules/
+playwright-report/
 playwright.config.ts
