@@ -40,7 +40,7 @@ jobs:
       - name: Install Node dependencies
         run: |
           npm init -y
-          npm install -D playwright
+          npm install -D @playwright/test playwright
 
       - name: Install Playwright browsers
         run: npx playwright install
