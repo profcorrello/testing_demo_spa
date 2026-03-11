@@ -17,7 +17,7 @@ from fastapi.staticfiles import StaticFiles
 # serve frontend assets from /static; API endpoints remain at root paths
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-@app.post("/convert2", response_class=HTMLResponse)
+@app.post("/convert", response_class=HTMLResponse)
 async def convert_docx(file: UploadFile = File(...)):
     """Convert a .docx file to HTML.
     
