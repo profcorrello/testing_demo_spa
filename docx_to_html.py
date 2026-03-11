@@ -9,6 +9,10 @@ import sys
 from pathlib import Path
 from typing import Optional
 
+
+# some changes to the code were made to make it more robust and handle edge cases better, such as:
+# - Added error
+
 from docx import Document
 from docx.table import Table
 from docx.text.paragraph import Paragraph
