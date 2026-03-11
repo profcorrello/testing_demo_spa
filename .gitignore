@@ -5,9 +5,14 @@ build/
 dist/
 wheels/
 *.egg-info
+*.lock 
+*.log
 
 # Virtual environments
 .venv
+.env
+venv/
+ 
 
 # Node/Playwright artifacts
 node_modules/
